@@ -1,16 +1,17 @@
 import React, { createContext, useState, ReactNode } from 'react'
 
 export interface IMetricsActions {
-  setData: (value: Array<IMetricsField>) => void
+  setMetrics: (value: Array<IMetricsField>) => void
 }
 
 export interface IMetricsField {
   name: string
   value: number
+  unit?: string
 }
 
 export interface IMetrics {
-  data: Array<IMetricsField>
+  metrics: Array<IMetricsField>
   actions: IMetricsActions
 }
 
@@ -21,14 +22,14 @@ interface Props {
 export const MetricsContext = createContext({})
 
 const MetricsProvider = (props: Props) => {
-  const [data, setData] = useState([])
+  const [metrics, setMetrics] = useState([])
 
   return (
     <MetricsContext.Provider
       value={{
-        data,
+        metrics,
         actions: {
-          setData
+          setMetrics
         }
       }}
     >

@@ -5,9 +5,9 @@ import MetricsBar from '../components/MetricsBar'
 
 const Home = <Props extends IMetrics>(props: Props) => {
   useEffect(() => {
-    props.actions.setData([
-      ...props.data,
-      { name: 'Recommandations client', value: 666 },
+    props.actions.setMetrics([
+      ...props.metrics,
+      { name: 'Recommandations client', value: 66, unit: '%' },
       { name: 'Guest score', value: 42 },
       { name: 'Campings ciblés', value: 112 },
       { name: 'Note moyenne', value: 8.4 }
@@ -18,7 +18,7 @@ const Home = <Props extends IMetrics>(props: Props) => {
     <div className="app-container">
       <MetricsBar />
 
-      {props.data.map((metric: IMetricsField, index: number) => (
+      {props.metrics.map((metric: IMetricsField, index: number) => (
         <div key={`metrictest-${index}`}>
           {metric.name} and {metric.value}
         </div>

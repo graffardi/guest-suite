@@ -5,8 +5,8 @@ import MetricItem from './MetricItem'
 
 const MetricsBar = <Props extends IMetrics>(props: Props) => (
   <div className="metrics-bar">
-    {props.data.map((metric: IMetricsField, index: number) => (
-      <MetricItem name={metric.name} value={metric.value} key={`metric-${index}`} />
+    {props.metrics.map((metric: IMetricsField, index: number) => (
+      <MetricItem name={metric.name} value={metric.value} unit={metric.unit} key={`metric-${index}`} />
     ))}
   </div>
 )
