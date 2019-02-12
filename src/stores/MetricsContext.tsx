@@ -1,12 +1,17 @@
-import React, { createContext, useState, ReactNode, Component, ReactElement } from 'react'
+import React, { createContext, useState, ReactNode } from 'react'
 
-export interface ContextActions {
-  setData: (value: string) => void
+export interface IMetricsActions {
+  setData: (value: Array<IMetricsField>) => void
 }
 
-export interface IMetricsContext {
-  data: string
-  actions: ContextActions
+export interface IMetricsField {
+  name: string
+  value: number
+}
+
+export interface IMetrics {
+  data: Array<IMetricsField>
+  actions: IMetricsActions
 }
 
 interface Props {
@@ -16,7 +21,7 @@ interface Props {
 export const MetricsContext = createContext({})
 
 const MetricsProvider = (props: Props) => {
-  const [data, setData] = useState('toto')
+  const [data, setData] = useState([])
 
   return (
     <MetricsContext.Provider
@@ -32,7 +37,7 @@ const MetricsProvider = (props: Props) => {
   )
 }
 
-export const useMetrics = (Component: React.ComponentType<IMetricsContext>) => (props: any) => (
+export const useMetrics = (Component: React.ComponentType<IMetrics>) => (props: any) => (
   <MetricsContext.Consumer>{store => <Component {...props} {...store} />}</MetricsContext.Consumer>
 )
 
