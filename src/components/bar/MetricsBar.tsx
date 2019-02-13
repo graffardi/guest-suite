@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IMetrics, IMetricsField, useMetrics } from '../stores/MetricsContext'
+import { IMetrics, IMetricsField, useMetrics } from '../../stores/MetricsContext'
 import MetricItem from './MetricItem'
 
 const MetricsBar = <Props extends IMetrics>(props: Props) => (

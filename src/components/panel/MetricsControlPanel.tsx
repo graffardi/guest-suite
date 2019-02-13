@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MetricsList from './MetricsList'
+import MetricsList from '../list/MetricsList'
 import MetricForm from './MetricForm'
 
 interface Props {}

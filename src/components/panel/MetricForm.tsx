@@ -1,10 +1,10 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 
-import { IMetrics, useMetrics } from '../stores/MetricsContext'
+import { IMetrics, useMetrics } from '../../stores/MetricsContext'
 
 const MetricForm = <Props extends IMetrics>(props: Props) => {
   const [fieldName, setFieldName] = useState('')
-  const [fieldValue, setFieldValue] = useState(0)
+  const [fieldValue, setFieldValue] = useState('')
   const [fieldUnit, setFieldUnit] = useState('')
 
   const handleSubmit = (e: FormEvent) => {
@@ -13,12 +13,12 @@ const MetricForm = <Props extends IMetrics>(props: Props) => {
     const metric = fieldUnit
       ? {
           name: fieldName,
-          value: fieldValue,
+          value: parseFloat(fieldValue),
           unit: fieldUnit
         }
       : {
           name: fieldName,
-          value: fieldValue
+          value: parseFloat(fieldValue)
         }
 
     props.actions.setMetrics([...props.metrics, metric])
@@ -42,7 +42,7 @@ const MetricForm = <Props extends IMetrics>(props: Props) => {
         value={fieldValue}
         placeholder="Value"
         required
-        onChange={(e: ChangeEvent<HTMLInputElement>) => setFieldValue(parseFloat(e.target.value))}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => setFieldValue(e.target.value)}
       />
       <input
         id="fieldName"

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 
 import { useMetrics, IMetrics, IMetricsField } from '../stores/MetricsContext'
-import MetricsBar from '../components/MetricsBar'
+import MetricsBar from '../components/bar/MetricsBar'
 import MetricsGraph from '../components/MetricsGraph'
-import MetricsControlPanel from '../components/MetricsControlPanel'
+import MetricsControlPanel from '../components/panel/MetricsControlPanel'
 
 const Home = <Props extends IMetrics>(props: Props) => {
   useEffect(() => {
