@@ -5,8 +5,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 
   text-transform: uppercase;
+
+  background-color: white;
 
   border-bottom: 2px solid lightgray;
 }

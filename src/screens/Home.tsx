@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 
 import { useMetrics, IMetrics, IMetricsField } from '../stores/MetricsContext'
 import MetricsBar from '../components/MetricsBar'
+import MetricsGraph from '../components/MetricsGraph'
+import MetricsControlPanel from '../components/MetricsControlPanel'
 
 const Home = <Props extends IMetrics>(props: Props) => {
   useEffect(() => {
@@ -18,11 +20,10 @@ const Home = <Props extends IMetrics>(props: Props) => {
     <div className="app-container">
       <MetricsBar />
 
-      {props.metrics.map((metric: IMetricsField, index: number) => (
-        <div key={`metrictest-${index}`}>
-          {metric.name} and {metric.value}
-        </div>
-      ))}
+      <div className="main-container">
+        <MetricsGraph />
+        <MetricsControlPanel />
+      </div>
     </div>
   )
 }
