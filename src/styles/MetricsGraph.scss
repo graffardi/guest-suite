@@ -1,6 +1,7 @@
 .graph-container {
-  width: 67%;
-  height: 100%;
+  height: 50%;
+
+  margin: 1em;
 
   box-sizing: border-box;
   padding: 1em;
@@ -9,4 +10,13 @@
 
   border-radius: 10px;
   border: 2px solid lightgray;
+}
+
+@media (min-width: 824px) {
+  .graph-container {
+    width: 67%;
+    height: 100%;
+
+    margin: 0;
+  }
 }

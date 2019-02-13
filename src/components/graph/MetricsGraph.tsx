@@ -1,7 +1,7 @@
 import React from 'react'
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts'
 
-import { IMetrics, useMetrics } from '../stores/MetricsContext'
+import { IMetrics, useMetrics } from '../../stores/MetricsContext'
 
 const MetricsGraph = <Props extends IMetrics>(props: Props) => (
   <div className="graph-container">
