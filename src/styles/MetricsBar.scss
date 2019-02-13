@@ -5,6 +5,7 @@
   padding: 1em;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -16,8 +17,12 @@
   border-bottom: 2px solid lightgray;
 }
 
-@media (min-width: 824px) {
+@media (min-width: 1024px) {
   .metrics-bar {
+    flex-direction: row;
+
     padding: 0;
+
+    overflow: hidden;
   }
 }

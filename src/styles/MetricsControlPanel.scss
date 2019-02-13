@@ -10,10 +10,12 @@
   border: 2px solid lightgray;
 }
 
-@media (min-width: 824px) {
+@media (min-width: 1024px) {
   .control-panel {
     width: 30%;
     height: 100%;
+
+    overflow: scroll;
 
     margin: 0;
   }

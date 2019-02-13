@@ -1,15 +1,6 @@
 .metric-container {
   display: flex;
   flex-direction: row;
-
-  border-right: 2px solid lightgray;
-
-  padding-right: 1em;
-  margin-right: 1em;
-}
-
-.metric-container:last-child {
-  border-right: none;
 }
 
 .metric-name {
@@ -20,4 +11,17 @@
 .metric-value {
   font-weight: 700;
   color: $secondary;
+}
+
+@media (min-width: 1024px) {
+  .metric-container {
+    border-right: 2px solid lightgray;
+
+    padding-right: 1em;
+    margin-right: 1em;
+  }
+
+  .metric-container:last-child {
+    border-right: none;
+  }
 }
