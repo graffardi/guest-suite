@@ -1,0 +1,27 @@
+.control-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.field {
+  border-radius: 5px;
+  border: 1px solid $primary;
+
+  padding: 5px;
+}
+
+.field-name {
+  width: 40%;
+  height: 2em;
+}
+
+.field-value {
+  width: 30%;
+  height: 2em;
+}
+
+.field-unit {
+  width: 10%;
+  height: 2em;
+}
