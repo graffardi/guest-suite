@@ -52,7 +52,9 @@ const MetricForm = <Props extends IMetrics>(props: Props) => {
         placeholder="Unit"
         onChange={(e: ChangeEvent<HTMLInputElement>) => setFieldUnit(e.target.value)}
       />
-      <button type="submit">Add</button>
+      <button type="submit" className="form-button">
+        Add
+      </button>
     </form>
   )
 }
