@@ -1,44 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation & lancement du projet
 
-## Available Scripts
+Pour installer ce projet, il suffit de lancer la commande suivante:
 
-In the project directory, you can run:
+```
+yarn install
+yarn start
+```
 
-### `npm start`
+## Structure du dossier
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Comme expliqué pendant l'entretien de la semaine dernière, voici l'architecture de mon projet:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- components/
+  ⋅⋅⋅ Un dossier par sous-composant.
+- screens/
+- stores/
+  ⋅⋅⋅ Contient ici mon context Metrics, dans lequel je vais gérer mes datas.
+- styles/
 
-### `npm test`
+## Explications
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sur ce petit projet, j'ai décidé de me faire plaisir en découvrant Typescript et en utilisant de nouvelles fonctionnalités de React 16.8 (à savoir les hooks https://reactjs.org/docs/hooks-intro.html).
 
-### `npm run build`
+Les Hooks que j'ai utilisé ici sont useState et useEffect. useEffect, dans le cas où il reçoit un tableau en second paramètre, ne se lancera que onMount et onUnmount.
+useState, quant à lui, nous permet de définir une variable et une fonction de modification de celle-ci affectées au state de notre composant, et ce par décomposition du tableau [variableName, setVariable].
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Attention, les Hooks ne sont utilisables que dans les Functional Components.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Ayant décidé de m'amuser en essayant de nouvaux patterns / une nouvelle technologie, j'ai donc poussé la démarche jusqu'au bout pour avoir une application uniquement composée de functional components et découpée au maximum, de manière à avoir un cycle de render bien optimisé.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Concernant le Context, j'aurai pu utiliser le Hook useContext, mais je me sentais plus à l'aise avec l'implémentation d'un Higher-Order Component (cf. MetricsContext.tsx et la fonction withMetrics).
