@@ -10,15 +10,24 @@ const MetricForm = <Props extends IMetrics>(props: Props) => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
 
+    const value = parseFloat(fieldValue)
+
+    if (!value) {
+      alert('Field value is not a number!')
+      setFieldValue('')
+
+      return
+    }
+
     const metric = fieldUnit
       ? {
           name: fieldName,
-          value: parseFloat(fieldValue),
+          value,
           unit: fieldUnit
         }
       : {
           name: fieldName,
-          value: parseFloat(fieldValue)
+          value
         }
 
     props.actions.setMetrics([...props.metrics, metric])
