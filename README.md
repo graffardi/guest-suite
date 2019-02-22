@@ -1,3 +1,5 @@
+# TEST TECHNIQUE - GUEST SUITE
+
 ## Installation & lancement du projet
 
 Pour installer ce projet, il suffit de lancer la commande suivante:
